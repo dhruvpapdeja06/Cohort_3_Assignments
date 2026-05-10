@@ -1,0 +1,188 @@
+/* Best website for PNG Images
+
+PNGWing
+PNGIMG
+CleanPNG
+Freepik
+
+*/
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+section{
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+}
+
+.card{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    border-radius: .75rem;
+    overflow: hidden;
+    
+}
+
+.card>.left{
+    top: 0%;
+    left: 0%;
+    width: 55%;
+    height: 100%;
+    background-color: #FCC60C;
+    position: absolute;
+    border-top-left-radius: .65rem;
+    border-bottom-left-radius: .65rem;
+    padding-left: 2.25rem;
+}
+
+.card>.left>.logo>img{
+    position: absolute;
+    top: .88%;
+    left: .5%;
+    width: 14rem;
+    height: 6.2rem;
+    
+}
+
+.card>.right{
+    top: 0%;
+    right: 0%;
+    width: 45%;
+    height: 100%;
+    position: absolute;
+    background-color: #FAE7B2;
+    border-top-right-radius: .65rem;
+    border-bottom-right-radius: .65rem;
+}
+
+.card>.right>.icon>img{
+    position: absolute;
+    height: 2.5rem;
+    width: 2.6rem;
+    right: 6%;
+    top: 4%;
+    opacity: 0.9;
+}
+
+.card>.right>#pikachu{
+    height: 75%;
+    position: absolute;
+    top: 15%;
+    left: -28%;
+}
+
+.card>.left>h5{
+    padding-top: 20%;
+    font-size: .9rem;
+    font-weight: bold;
+    line-height: normal;
+    letter-spacing: 3px;
+    padding-left: .35rem;
+}
+
+.card>.left>h1{
+    font-weight: bolder;
+    font-size: 7.75em;
+    
+}
+
+.card>.left>pre{
+    font-size: .95rem;
+    font-weight: 400;
+    white-space: pre-line;
+    line-height: 1.4rem;
+    padding-left: .35rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: .8px;
+}
+
+.line{
+    left: 6%;
+    position: absolute;
+    height: 2px;
+    width: 3.75rem;
+    background-color: black;
+    bottom: 23.5%;
+}
+
+.page-no{
+    position: absolute;
+    bottom: 22.3%;
+    font-weight: 550;
+    padding-left: 5rem;
+}
+
+.card>.left>.circle{
+    height: 10rem;
+    width: 10rem;
+    border: 18px solid rgba(0,0,0,0.08);
+    border-radius: 50%;
+    position: absolute;
+    bottom: -8.75%;
+    left: 4%;
+}
+
+.card>.left>.circle>.circle-line{
+    position: absolute;
+    width: 100%;
+    height: 1rem;
+    background-color: rgba(0,0,0,0.08);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    
+}
+
+.card>.left>.circle>.inner-circle{
+    position: absolute;
+    height: 3.3rem;
+    width: 3.3rem;
+    background-color: #FCC60C;
+    border: 13px solid rgba(0,0,0,0.08);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.card>.right>.dot{
+    height: 9px;
+    width: 9px;
+    border-radius: 50%;
+    background-color:  #f2c300;
+    position: absolute;
+    right: 4.5%;
+   
+}
+
+.card>.right>.active{
+    top: 45%;
+    background-color: rgb(10, 10, 10);
+}
+
+.dot2{
+    top: 48%;
+}
+
+.dot3{
+    top: 51%;
+}
+
+.dot4{
+    top: 54%;
+}
+
+.dot5{
+    top: 57%;
+}
