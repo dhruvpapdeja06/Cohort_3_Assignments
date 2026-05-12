@@ -1,0 +1,152 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #F0F0F0;
+    overflow: hidden;
+}
+
+.logo>img{
+    position: absolute;
+    height: 4.8rem;
+    width: 4.6rem;
+    top: 0%;
+
+}
+
+.top-content{
+    color: #7e7472;
+    top: 3%;
+    right: 1.65%;
+    position: absolute;
+    font-weight: 700;
+    font-size: .65rem;
+    text-align: end;
+    
+}
+
+main{
+    height: 100%;
+    width: 100%;
+    
+}
+
+main>.hero-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1.3rem;
+    margin-right: 6rem;
+    
+}
+
+section.hero-content>.hero-dark{
+    color: #54060A;
+    font-size: 3.25rem;
+    font-weight: 400;
+    letter-spacing: -4px;
+    line-height: 2.7rem;
+}
+
+section.hero-content>.hero-dark>img{
+    padding-bottom: -2rem;
+    height: auto;
+    width: 6rem;
+}
+
+section.hero-content>.hero-light{
+    color: #AC989A;
+    font-size: 3.25rem;
+    font-weight: 400;
+    letter-spacing: -4px;
+    line-height: 2.7rem;
+    margin-left: 10rem;
+}
+
+section.hero-content>.hero-dark-center{
+    color: #54060A;
+    font-size: 3.25rem;
+    font-weight: 400;
+    letter-spacing: -4px;
+    line-height: 2.7rem;
+    margin-left: 6rem;
+}
+
+section.hero-description>.description{
+    color: #54060A;
+    font-size: .6rem;
+    margin-top: .85rem;
+    line-height: .65rem;
+    text-align: start;
+    margin-right: 3rem;
+    font-weight: 550;
+    letter-spacing: -0.02rem;
+    word-spacing: -3px;
+
+}
+
+section.center-content{
+    display: flex;
+    justify-content: space-between;
+}
+
+section.center-content>.card{
+    display: flex;
+
+}
+
+section.center-content>.left-content{
+    color: #54060A;
+    font-weight: 500;
+    text-decoration: underline;
+    padding-top: 9.85rem;
+}
+
+img{
+    height: 13.25rem;
+    width: 18rem;
+}
+
+section.bottom-content{
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section.bottom-content>.bottom>.hero-dark{
+    color: #54060A;
+    font-size: 3.25rem;
+    font-weight: 400;
+    letter-spacing: -4px;
+    line-height: 2.7rem;
+    margin-bottom: .6rem;
+
+}
+
+section.bottom-content>.bottom>.hero-dark>span{
+    color: #AC989A;
+    font-size: 3.65rem;
+    font-weight: 400;
+    letter-spacing: -4px;
+    line-height: 2.7rem;
+}
+
+.bottom-decription>pre{
+    color: #54060A;
+    font-size: .6rem;
+    line-height: .65rem;
+    margin-right: 4.5rem;
+    font-weight: 550;
+    letter-spacing: -0.02rem;
+    word-spacing: -3px;
+    white-space: pre-line;
+    padding-left: 5rem;
+
+}
