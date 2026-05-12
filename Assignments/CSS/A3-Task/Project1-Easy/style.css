@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body,main{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+section.home-page{
+    height: 100%;
+    width: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: linear-gradient(
+    135deg,
+    #570e4c 0%,
+    #3e0c6d 25%,
+    #1b0b52 55%,
+    #070312 100%
+    );
+    color: whitesmoke;
+}
+
+.home-page>h3{
+    font-size: .7rem;
+    font-weight: 400;
+    position: absolute;
+    right: 13%;
+    top: 2%;
+}
+
+.home-page>span{
+    padding-left: 11rem;
+    position: relative;
+    font-weight: 400;
+    top: 3.2%;
+}
+
+section.home-page h2{
+    font-size: 1.1rem;
+}
+
+section.home-page .card-container{
+    width: 80%;
+    margin: auto;
+    margin-top: 2.15rem;
+    height: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: .5rem;
+}
+
+.card-likes{
+    font-size: .5rem;
+}
+
+i{
+    font-size: .75rem;
+    font-weight: 500;
+}
+
+.card-container .card{
+    background-color: #55406E;
+    display: flex;
+    flex-direction: column;
+    gap: .1rem;
+    height: 17rem;
+    width: 20%;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 1.25rem;
+}
+
+.card-img{
+    width: 76%;
+    height: 69%;
+    padding-top: 1.25rem;
+}
+
+.card-img>img{
+    width: 100%;
+    border: 1px white solid;
+    border-radius: .75rem;
+}
+
+.card-text{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    font-size: .8rem;
+    margin-bottom: .5rem;
+}
+
+.card-btn>button{
+    padding: 5px 20px;
+    border: 2px solid #AB82DF;
+    border-radius: 20px;
+    background-color: transparent;
+    color: whitesmoke;
+
+}
+
+.card-btn{
+    margin-block-end: .75rem;
+}
