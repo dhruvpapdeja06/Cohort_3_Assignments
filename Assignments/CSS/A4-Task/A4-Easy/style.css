@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+main{
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+    background-color:#000000;
+}
+
+section.home{
+    height: 100%;
+    width: 100%;
+    
+    display: grid;
+    gap: .5rem;
+    grid-template-columns: 1.1fr 1fr .9fr 1.2fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "profile circle-poster menu  stock"
+    "barcode info menu character"
+    "barcode badge rating rating"
+    "barcode qr-card rating rating";
+}
+
+.card{
+    background-color: azure;
+    border: 2px solid red;
+    padding: 1.25rem;
+    border-radius: 1.25rem;
+}
+
+.profile{
+    background-color: yellow;
+    grid-area: profile;
+}
+
+.circle-poster{
+    background-color: orange;
+    grid-area: circle-poster;
+}
+
+.menu{
+    background-color: green;
+    grid-area: menu;
+}
+
+.stock{
+    background-color: lemonchiffon;
+    grid-area: stock;
+}
+
+.barcode{
+    background-color: violet;
+    grid-area: barcode;
+}
+
+.info{
+    background-color: navy;
+    grid-area: info;
+}
+
+.character{
+    background-color: lightseagreen;
+    grid-area: character;
+}
+
+.badge{
+    background-color: crimson;
+    grid-area: badge;
+}
+
+.rating{
+    background-color: lightgreen;
+    grid-area: rating;
+}
+
+.qr-card{
+    background-color: gray;
+    grid-area: qr-card;
+}

@@ -1,0 +1,615 @@
+/* 
+<i class="ri-copyright-line"></i>
+<i class="ri-twitter-fill"></i>
+<i class="ri-facebook-box-fill"></i>
+<i class="ri-instagram-line"></i>
+<i class="ri-pinterest-fill"></i>
+<i class="ri-heart-3-line"></i>
+<i class="ri-bookmark-line"></i>
+<i class="ri-eye-line"></i>
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    
+}
+
+main{
+    min-height: 100vh;
+    width: 100%;
+    background-color: #FFFFFF;
+    color: #000000;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+section.home-page{
+    min-height: 100vh;
+    width: 100%;
+}
+
+.home-page header{
+    width: 100%;
+    height: 3rem;
+    padding: 2.35rem 2rem;
+}
+
+.home-page>header>nav{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav>.logo>img{
+    height: 100%;
+    width: 5rem;
+}
+
+nav .links{
+    display: flex;
+    gap: 1.5rem;
+    width: 70%;
+}
+
+nav .links>a{
+    font-size: .9rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: black;
+    /* line-height: 15rem; */
+
+}
+
+nav .btn-parent{
+    display: flex;
+    gap:.5rem;
+    align-items: center;
+}
+
+
+button{
+    padding: .75rem 1rem;
+    border-radius: 1.25rem;
+    font-weight: 700;
+    font-size: .9rem;
+    border: none;
+}
+
+.btn-parent button:nth-child(1){
+    color: black;
+    background-color: rgb(247, 244, 244);
+}
+
+.btn-parent button:nth-child(2){
+    color: white;
+    background-color: #000000;
+}
+
+.home-text-center{
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2.15rem;
+
+}
+
+.home-text-center>h1{
+    font-size: 9.5vh;
+    font-weight: 400;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-top: 3rem;
+}  
+
+.home-text-center>p{
+    font-weight: 400;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    
+}
+
+.search-center{
+    display: flex;
+    justify-content: space-between;
+    background-color: #f3f3f6;
+    width: 50%;
+    padding: 4px 1.5rem;
+    border-radius: 3rem;
+    overflow: hidden;
+}
+
+.search-center .search-left>input{
+    height: 100%;
+    border: none;
+    width: 100%;
+    background-color: transparent;
+    font-size: 1rem;
+    opacity: .8;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.search-center .search-right{
+    width: 16%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.search-right .shots>h2{
+    font-size: 1.15rem;
+    font-weight: 500;
+}
+
+.search-right .search-icon{
+    height: 80%;
+    width: 80%;
+}
+
+.search-right .search-icon>.icon{
+    height: 100%;
+    width: 100%;
+    background-color: #EC5E95;
+    border-radius: 50%;
+    align-content: center;
+    padding: .375rem .75rem;
+    
+}
+
+.search-right .search-icon>.icon>i{
+    color: white;
+    font-weight: 400;
+    font-size: 1.25rem;
+    
+}
+
+.search-center:hover{
+    background-color: white;
+}
+
+.home-buttons{
+    display: flex;
+    gap: 1.25rem;    
+}
+
+.home-buttons>button{
+    font-weight: 400;
+    font-size: .9rem;
+    padding: .375rem .75rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.home-buttons button:nth-child(1){
+    color: rgb(182, 179, 179);
+    background-color: transparent;
+}
+
+.home-buttons button:hover{
+    background-color: transparent;
+}
+
+.home-bottom{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4.45rem;
+    align-items: center;
+}
+
+.center{
+    display: flex;
+    gap: 2.25rem;
+}
+
+.center>h2{
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.center h2:nth-child(8){
+    margin-left: 1.25rem;
+}
+
+.home-bottom .left{
+    padding: .45rem 1.25rem;
+    border: 1px solid rgba(32, 32, 32, 0.479);
+    border-radius: .75rem;
+
+}
+
+.home-bottom .right{
+    height: 50%;
+    padding: .45rem .9rem;
+    border: 1px solid rgba(32, 32, 32, 0.479);
+    border-radius: 1rem;
+    align-content: center;
+    font-weight: 400;
+    font-size: .9rem;
+    opacity: .95;
+}
+
+/* section-2 */
+
+.section-2{
+    min-height: 100vh;
+    width: 92%;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(4,1fr);
+    /* grid-template-rows: 1fr 1fr .3fr; */
+    grid-template-areas: 
+    "top-left top-center1 top-center2 top-right"
+    "center-left center-center1 center-center2 center-right"
+    "bottom-left bottom-center1 bottom-center2 bottom-right";
+    margin: auto;
+    margin-top: 1.5rem;
+   
+}
+
+.top-left,
+.top-center1,
+.top-center2,
+.top-right,
+.center-left,
+.center-center1,
+.center-center2,
+.center-right,
+.bottom-left,
+.bottom-center1,
+.bottom-center2,
+.bottom-center3,
+.bottom-right{
+    grid-area: top-left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* position: relative; */
+}
+
+.card{
+    width: 100%;
+    height: 100%;
+}
+
+.card-img{
+    width: 100%;
+    height: 90%;
+    border-radius: .75rem;
+    overflow: hidden;
+    position: relative;
+    
+}
+
+.card .card-img>img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;    
+    
+}
+
+.card .card-img>video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    user-select: none;    
+    
+}
+
+.card-middle{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: linear-gradient(transparent,black);
+    color: white;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 1.5s;
+    position: absolute;
+    height: 40%;
+    bottom: -40%;
+    left: 0%;
+    transform: translateY(-40%);
+    opacity: 0;
+}
+
+.card:hover .card-middle{
+    transform: translateY(-100%);
+    opacity: 1;
+    z-index: 3;
+}
+
+
+.card-middle>h3{
+    width: 60%;
+    font-size: .9rem;
+    font-weight: 600;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+.card-middle .right>.heart,
+.card-middle .right>.bookmark{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    background-color: white;
+    border-radius: 50%;
+   
+}
+
+.card-middle .right>.heart>i,
+.card-middle .right>.bookmark>i
+{
+    color:black;
+}
+
+.card-middle .right{
+    display: flex;
+    gap: 1rem;
+    font-size : 1rem;
+}
+
+.card-bottom{
+    margin-top: .25rem;
+    display: flex;
+    width: 100%;
+    height: 15%;
+    align-items: start;
+    justify-content: space-between;
+    
+}
+
+.card-bottom .left{
+    display: flex;
+    gap: .5rem;
+    align-items: start;
+}
+
+.card-bottom .left .profile>img{
+    border-radius: 50%;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.card-bottom .left h3{
+    font-size: .8rem;
+    font-weight: 600;
+}
+
+
+
+.card-bottom .left>.pro{
+    width: fit-content;
+    background-color: #A1A1AA;
+    color: white;
+    font-size: .8rem;
+    font-weight: 400;
+    padding: 0px .2rem;
+    text-align: center;
+}
+
+.card-bottom .right{
+    display: flex;
+    gap: .45rem;
+    font-size: .8rem;    
+}
+
+.right .heart-bottom>i{
+    color: #A1A1AA;  
+}
+
+.right .eye>i{
+    color: #A1A1AA;
+}
+
+.top-center1{
+    grid-area: top-center1
+}
+
+.top-center2{
+    grid-area: top-center2
+}
+
+.top-right{
+    grid-area: top-right;
+}
+
+
+.center-left{
+    grid-area: center-left;
+}
+
+.center-center1{
+    grid-area: center-center1;
+}
+
+.center-center2{
+    grid-area: center-center2;
+}
+
+.center-center2{
+    grid-area: center-center2;
+}
+
+.center-right{
+    grid-area: center-right;
+}
+
+.bottom-left{
+    grid-area: bottom-left;
+}
+
+.bottom-center1{
+    grid-area: bottom-center1;
+}
+
+.bottom-center2{
+    grid-area: bottom-center2;
+}
+
+.bottom-right{
+    grid-area: bottom-right;
+}
+
+/* bottom part , section-3*/
+
+.section-3{
+    margin-top: 1rem;
+    width: 100%;
+    max-height: 100%;
+}
+
+.bottom-button{
+    width: 100%;
+    height: 3.5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.sign-btn{
+    width: 80%;
+    padding-left: 45%;
+}
+
+.sign-btn>button{
+    background-color: #000000;
+    color: white;
+    padding: .38rem .9rem
+}
+
+.up-arrow{
+    padding-left: 15%;
+    width: 20%;
+}
+
+.up-arrow>i{
+    font-size: 3rem;
+    color: #A1A1AA;
+}
+
+.bottom-container{
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 4rem;
+}
+
+.bottom-container>img{
+    height: 4rem;
+    width: fit-content
+}
+
+#scroll{
+  
+    animation-name: scroll;
+    animation-duration: 40s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+   
+}
+
+.container{
+    display: flex;
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 6rem;
+    gap: 12rem;
+}
+
+@keyframes scroll {
+    from{
+        transform: translateX(100%);
+    }
+    to{
+         transform: translateX(-300%);
+}   
+    }
+    
+.bottom-info{
+    margin: auto;
+    margin-top: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 84%;
+    height: 4.5rem;
+}
+
+.bottom-info .bottom-logo{
+    height: 100%;
+    width: 6rem;
+}
+
+.bottom-info .bottom-logo>img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    
+}
+
+.bottom-text{
+    display: flex;
+    gap: 2.75rem;
+}
+
+.bottom-text>h3{
+    font-size: .9rem;
+    font-weight: 500;
+}
+
+.bottom-media>i{
+    font-size: 1.25rem;
+}
+
+footer{
+    width: 84%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+footer .left>h3,
+footer .right>h3{
+    font-size: .9rem;
+    font-weight: 500;
+    color:  #A1A1AA;
+    
+}
+
+footer .left>i{
+    font-size: .9rem;
+    font-weight: 500;
+    color:  #A1A1AA;
+    align-content: end;
+}
+
+footer>.left{
+    display: flex;
+    gap: 1.25rem;
+}
+
+footer>.right{
+    display: flex;
+    gap: 1.25rem;
+}

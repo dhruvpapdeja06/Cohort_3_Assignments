@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    /* overflow: hidden; */
+}
+
+main{
+    height: 100%;
+    width: 100%;
+    background-color: #FFFFFF;
+    padding: .75rem 2.5rem;
+}
+
+.section1{
+    height: 100%; 
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+.section1 .header{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    /* margin: auto; */
+    
+}
+
+.header .header-logo{
+    display: flex;
+    align-items: center;
+}
+
+.header-logo>i{
+    font-size: 1.5rem;
+    gap: .2rem;
+    
+}
+
+.header .header-links{
+    display: flex;
+    gap: 1rem;
+}
+
+.header .header-links>a{
+    color: black;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.header .header-button{
+    display: flex;
+    gap: .75rem;
+}
+
+.header .header-button>button{
+    padding: 7px 12px;
+    border-radius: .9rem;
+    border: none;
+}
+
+.header-button #contact{
+    color: #8a8787;
+    background-color: #000000
+}
+
+.hero-section{
+    width: 100%;
+    height: calc(100% - 1.45rem);
+    background-color: #FBFBFB;
+    display: flex;
+    gap: 10px;
+}
+
+.left-hero{
+    width: 45%;
+    background-color: green;
+    border: 2px solid black;
+}
+
+.hero-section .right-hero{
+    width: 55%;
+
+}
