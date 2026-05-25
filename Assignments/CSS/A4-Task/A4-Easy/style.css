@@ -1,3 +1,9 @@
+/* 
+<i class="ri-map-pin-line"></i>
+
+*/
+
+
 *{
     margin: 0;
     padding: 0;
@@ -12,7 +18,7 @@ html,body{
 main{
     height: 100%;
     width: 100%;
-    padding: 1rem;
+    padding: 2rem;
     background-color:#000000;
 }
 
@@ -22,25 +28,31 @@ section.home{
     
     display: grid;
     gap: .5rem;
-    grid-template-columns: 1.1fr 1fr .9fr 1.2fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: .9fr 1fr .9fr 1.2fr;
+    grid-template-rows: .6fr .6fr 1fr .6fr .6fr;
     grid-template-areas: 
-    "profile circle-poster menu  stock"
+    "profile circle-poster menu emoji"
+    "profile cirlce-poster menu character"
     "barcode info menu character"
     "barcode badge rating rating"
     "barcode qr-card rating rating";
 }
 
-.card{
-    background-color: azure;
-    border: 2px solid red;
-    padding: 1.25rem;
-    border-radius: 1.25rem;
+.profile{
+    grid-area: profile;
+    background-color:#111111;
+    padding: .5rem;
+    border-radius: 1.5rem;
 }
 
-.profile{
-    background-color: yellow;
-    grid-area: profile;
+.profile>img{
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+    /* aspect-ratio: 3/1; */
+    border-radius: 1.25rem;
+    background-color: #9E54F4;
+    
 }
 
 .circle-poster{
@@ -53,9 +65,9 @@ section.home{
     grid-area: menu;
 }
 
-.stock{
+.emoji{
     background-color: lemonchiffon;
-    grid-area: stock;
+    grid-area: emoji
 }
 
 .barcode{
