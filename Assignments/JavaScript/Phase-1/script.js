@@ -247,7 +247,7 @@ console.log(bool1 || bool2); // T
 
 
 /*
- 
+
 ## Strings
 
 */
@@ -304,40 +304,450 @@ console.log(`My name is ${myName} and I am ${myAge} years old`);
 /*
 ## Numbers & Math
 
-1. Round `4.7` using `Math.round()`.
-2. Find the square root of 81.
-3. Find the maximum number from `10, 20, 5, 99`.
-4. Generate a random number between 1 and 10.
-5. Convert `"99.99"` into an integer.
-6. Check whether `25` is an integer or not.
-7. Use `toFixed(2)` on `3.141592`.
-
 */
+
+// 1. Round `4.7` using `Math.round()`.
+
+
+console.log(Math.round(4.7));
+console.log(Math.round(0.5));
+console.log(Math.round(1.500)); // convert a decimal to nearest integer
+
+// 2. Find the square root of 81.
+console.log(Math.sqrt(81));
+console.log(Math.sqrt(10));
+
+// 3. Find the maximum number from `10, 20, 5, 99`.
+console.log(Math.max(10,20,5,99));
+
+// 4. Generate a random number between 1 and 10.
+console.log(Math.floor(Math.random()*10+1));
+
+// 5. Convert `"99.99"` into an integer.
+let int = 99.99;
+console.log(parseInt(int));
+console.log(Math.trunc(int));  // remove decimal
+
+
+// 6. Check whether `25` is an integer or not.
+let check = 25.555;
+console.log(typeof(check) === "number"); // give true even if float
+
+//2. way
+console.log(Number.isInteger(check));
+
+//3.way
+console.log(check % 1 === 0);
+
+// 7. Use `toFixed(2)` on `3.141592`.
+let fix = 3.141592;
+console.log(fix.toFixed(2));
+
+
 
 
 /*  
 
 ## Conditionals
+---
 
-1. Check whether a number is positive or negative.
-2. Check whether a number is even or odd.
-3. Check whether a person is eligible to vote.
-4. Find the largest among two numbers.
-5. Find the largest among three numbers.
-6. Check whether a year is a leap year.
-7. Check whether a number is divisible by both 3 and 5.
+
+
+*/
+
+// 1. Check whether a number is positive or negative.
+
+// fail for -0 test case
+let sample = -0;
+if(sample >= 0){
+    console.log("Positive Number");
+}else{
+    console.log("Negative Number");
+}
+
+//sign
+console.log(Math.sign(-0));
+console.log(Math.sign(-11.11));
+console.log(Math.sign(-100.01)); 
+
+
+console.log(-0 == 0);
+console.log(-0 === 0);
+console.log(Object.is(0,-0));
+console.log(Object.is(-4,-0));
+console.log(NaN === NaN); //f
+console.log(Object.is(NaN,NaN)); //t
+console.log([] === []); //f
+console.log(Object.is([],[])); //f
+
+console.log("testing");
+console.log(Object.is(-0,-0));
+console.log(Object.is(5,0));
+
+/*  
+
+ truthy or falsy value
+
+ 1. false— Boolean false value.
+  2. 0— Zero (positive zero). 
+  3. -0— Negative zero. 
+  4. 0n— BigInt zero.
+   5. ""Or ''— Empty string.
+    6. null— No value. 
+    7. undefined— Value not defined.
+     8. NaN— Not a Number.
+
+
+*/
+
+//test
+let myList = [];
+if(myList.length !== 0){
+    console.log("Working");
+}else{
+    console.log("Not Working");
+}
+
+// 2. Check whether a number is even or odd.
+let guess = 99;
+if(guess % 2 == 0){
+    console.log("even");
+}else{
+    console.log("Odd");
+}
+
+// 3. Check whether a person is eligible to vote.
+
+let isEligible = 18;
+if(isEligible >= 18){
+    console.log("Eligible to vote");
+}else{
+    console.log("Not Eligible for vote");
+}
+
+// 4. Find the largest among two numbers.
+
+let first = 64;
+let second = 48;
+let third = 66
+
+if(first > second){
+    console.log("First Number is largest");
+}else{
+    console.log("Second Number is largest");
+}
+
+
+// 5. Find the largest among three numbers
+if(first > second && first > third){
+    console.log("First is largest");
+}else if(second > third){
+    console.log("Second is largest");
+}else{
+    console.log("Third is largest");
+}
+
+
+// 6. Check whether a year is a leap year.
+
+//  year must be divisible by 4 , but not by 100. However, if the year is divisible by 400
+let year = 80;
+if( (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0){
+    console.log("Leap Year");
+}else{
+    console.log("Not a Leap Year");
+}
+
+// 7. Check whether a number is divisible by both 3 and 5.
+let empty = [];
+for(let i=1; i<=20; i++){
+    if(i % 3 == 0 && i % 5 == 0){
+        empty.push(i);      
+    }
+}
+console.log(empty);
+
+/*
 8. Create a simple grading system:
 - 90+ → A
 - 75+ → B
 - 50+ → C
-- below 50 → Fail
-1. Check whether a character is a vowel or consonant.
-2. Create a calculator using `switch` statement.
-3. Print the day name based on a number (1–7).
-4. Check whether a username is `"admin"` and password is `"1234"`.
+- below 50 → Fail */
 
----
+let marks = 88;
+if(marks > 90){
+    console.log("Grade A");
+}else if(marks > 75 && marks <= 90){
+    console.log("Grade B")
+}else if(marks > 50 && marks >= 75){
+    console.log("Grade C");
+}else{
+    console.log("fail");
+}
+
+
+
+// 1. Check whether a character is a vowel or consonant.
+
+let char = "z";
+let vowels = "aeiouAEIOU";
+if(vowels.includes(char)){
+    console.log(`${char} Vowel`);
+}else{
+    console.log(`${char} consonant`);
+}
+
+
+// 2. Create a calculator using `switch` statement.
+let operand_1 = 7;
+let operand_2 = 5;
+let operator = "/";
+switch(operator){
+    case "+":
+        console.log(`Sum of No is ${operand_1 + operand_2}`);
+        break;
+    case "-":
+        console.log(`Sub of two No is ${operand_1 - operand_2}`);
+        break;
+    case "*":
+        console.log(`Mul of two No is ${opearnd_1 + operand_2}`);
+        break;
+    case "/":
+        if(operand_2 === 0 ){
+            console.log("Not possible");
+        }
+        else{
+            console.log(`Div of two no is ${operand_1/operand_2}`);
+        }
+        break;
+    default:
+        console.log("No Operation");
+}
+
+
+// 3. Print the day name based on a number (1–7).
+let day = 1;
+
+switch(day){
+    case 1:
+        console.log("Monday");
+        break;
+    case 2:
+        console.log("Tuesday");
+        break;
+    case 3:
+        console.log("Wednesday");
+        break;
+    case 4:
+        console.log("Thursday");
+        break;
+    case 5:
+        console.log("Friday");
+        break;
+    case 6:
+        console.log("Saturday");
+        break;
+    case 7:
+        console.log("Sunday");
+        break;
+    default:
+        console.log("Not present");
+}
+
+
+// 4. Check whether a username is `"admin"` and password is `"1234"`.
+let username = "admin";
+let password = "1234";
+
+if(username === "admin" && password === "1234"){
+    console.log("Authenticate");
+}else{
+    console.log("Not Authenticate");
+}
+
+
+/* 
 
 ## Truthy & Falsy
+*/
+
+
+// 1. Check whether an empty string is truthy or falsy.
+
+//Empty falsey if space then truthy
+if(""){
+    console.log("Truthy");
+}else{
+    console.log("Falsy");
+}
+
+
+// 2. Check whether `0` is truthy or falsy.
+if(0){
+    console.log("Execute");
+}else{
+    console.log("Not Execute"); // 0 falsy
+}
+
+// 3. Check whether `[]` is truthy or falsy.
+if([]) console.log("Run"); //[] truthy
+else console.log("Not Run"); 
+
+// 4. Create a variable and print `"Valid"` if it has a value otherwise print `"Invalid"`.
+let h = "hello";
+if(h){
+    console.log("Woking");
+}else console.log("Not Working");
+
+
+/*  
+Ternary Operator
+
+
+
+*/
+
+// 1.Check whether a number is even or odd using ternary operator.
+let test1 = 99;
+console.log(test1 % 2 == 0 ? "even": "odd");
+
+// 2.Check whether age is above 18 using ternary operator.
+let Age = 22;
+console.log(Age >= 18 ? "Adult" : "Minor");
+
+
+// 3.Find the greater number between two values using ternary operator.
+console.log(operand_1 > operand_2 ? operand_1: operand_2);
+
+/* 
+
+## Mixed Practice Questions
+
+*/
+
+// 1. Create a mini biodata program using variables and template literals.
+let empName = "Dhruv";
+let empAge = 26;
+let empSkills = ["HTML","CSS","JavaScript"];
+let profession = "Engg";
+let isAvailableForWork = true;
+
+let bio = `
+    ======================================
+                    Bio Data
+    ======================================
+    Name :  ${empName}
+    Age : ${empAge}
+    Profession : ${profession}
+    Skills : ${empSkills.join(", ")}
+    Available : ${isAvailableForWork} 
+    }
+    
+    `
+
+
+console.log(bio);
+
+// 2. Calculate the area of a rectangle.
+let length = 55;
+let breadth = 4;
+let area = length * breadth;
+console.log(area);
+
+
+// 3. Calculate the simple interest.
+let p = 100;
+let r = 8;
+let t = 2;
+
+let S_I = (p*r*t)/100;
+console.log(S_I);
+
+
+// 4. Convert temperature from Celsius to Fahrenheit.
+let celsius = 45;
+let fahrenheit;
+
+fahrenheit = ( celsius * 9)/5 + 32;
+
+console.log(fahrenheit + "F");
+
+// 5. Convert kilometers into meters.
+let distance = "140km";
+let conv = parseInt(distance);
+let inMeter = conv * 1000;
+console.log(inMeter + "m");
+
+
+// 6. Calculate total marks and percentage of 5 subjects.
+let math = 78;
+let english = 88;
+let physics = 79;
+let chemistry = 92;
+let hindi = 68;
+
+let total = math + english + physics + chemistry + hindi;
+let percent = (total/500)*100;
+console.log(percent + "%");
+
+// 7. Calculate electricity bill based on units consumed.
+
+// under 100 --> 5Rs , 100-200 --> 7Rs , 200-300 --> 8RS
+
+let units = 210;
+if(units <= 100){
+    console.log(`Electricity Bill of ${units} is : ${units * 5}Rs` );
+}else if(units >100 && units<= 200){
+    let last = 100 * 5;
+    let above = units - 100;
+    console.log(`Electricty bill of ${units} is : ${(above * 7) + last}`);
+}else{
+    let current = units - 200;
+    console.log(`Electricty Bill of ${units} is : ${(current * 8) + 500  + 700}`);
+}
+
+// 8. Create a username generator using first name and birth year.
+let fname = "Ishan Sharma";
+let fbirth = 2002;
+
+let [uname] = fname.trim().split(" ");
+let fName = uname + fbirth;
+console.log(fName);
+
+// 9. Check whether a string starts with a specific letter.
+let client = "Vaibhav";
+let match = "v";
+
+if(client.toLowerCase().startsWith(match)){
+    console.log("Client first letter starts with " +match);
+}else{
+    console.log("Client first letter not starts with " +match);
+}
+
+
+// 10. Count the total characters in a sentence excluding spaces.
+let slogan = "I Love my India.";
+console.log(slogan.length);
+slogan = slogan.replaceAll(" ","");  // or regex /\s/g,"" with replace
+console.log(slogan.length);
+
+
+/* 
+
+## Logical Thinking Questions
+
+1. Take two numbers and print which one is greater.
+2. Check whether a number lies between 10 and 50.
+3. Check whether a password length is greater than 8.
+4. Check if a person can drive:
+- age > 18
+- has license = true
+1. Check whether a number is divisible by 2, 3, or both.
+2. Print `"Good Morning"`, `"Good Afternoon"`, or `"Good Evening"` based on time.
+3. Find whether a number is a multiple of 10.
+4. Create a simple discount calculator.
+5. Check whether a product is in stock.
+6. Calculate final bill after GST.
+
 
 */
