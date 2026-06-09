@@ -296,3 +296,192 @@ function calculateDiscount(price){
 
 console.log(calculateDiscount(1000));
 
+/*
+
+Question 9 (Hard) — Dynamic Sum Function
+Create a function:
+
+sum(...numbers)
+that can add any amount of numbers.
+
+*/
+
+function sum(...numbers){
+    let total = numbers.reduce((acc,curr)=>{
+       return  acc + curr;
+    },0)
+    return total;
+}
+
+console.log("sum of no is ",sum(3,7,10,2));
+
+/*  Arrays + Objects + Functions Together */
+
+/*
+
+Question 10 (Easy) — Find Adult Users
+
+Create a function:
+getAdults(users)
+
+Return only users whose age is 18 or above.
+
+
+*/
+
+letusers= [{ name:"Ritik", age:20 },
+{ name:"Aman", age:16 },
+{ name:"Priya", age:25 }
+];
+
+function getAdults(users){
+    return users.filter(({age})=> age > 18);
+}
+
+console.log(getAdults(letusers));
+
+
+/*
+
+Question 11 (Moderate) — Shopping Cart Total
+
+Create a function:
+getCartTotal(cart)
+
+
+*/
+
+letcart= [
+{ name:"Mouse", price:500, qty:2 },
+{ name:"Keyboard", price:1000, qty:1 },
+{ name:"Monitor", price:10000, qty:1 }
+];
+
+function getCartTotal(cart){
+    return cart.map((elem)=> elem.price * elem.qty).reduce(((acc,curr)=> acc + curr),0);
+}
+
+console.log("Total cart price is ",getCartTotal(letcart));
+
+
+/*  
+
+Question 12 (Hard) — Student Grade Report
+
+Create a function:
+generateReport(students)
+
+
+
+*/
+
+letstudents= [
+{
+name:"Ritik",
+marks: [80,90,85]
+},
+{
+name:"Aman",
+marks: [50,40,60]
+}
+];
+
+function generateReport(students){
+    return students.map(function(student){
+        let total = student.marks.reduce((acc,curr)=> acc + curr ,0);
+
+        let avg = total/student.marks.length;
+
+        let grade;
+        if(avg > 80){
+            grade = "A";
+        }else if(avg > 60 && avg <=80){
+            grade = "B";
+        }else{
+            grade = "C";
+        }
+
+        return {
+            name: student.name,
+            average: avg,
+            grade: grade
+        };
+
+    });
+}
+
+console.log(generateReport(letstudents));
+
+
+/* 
+Final Challenge (Very Hard)
+Mini Library Management System
+
+Create:
+
+addBook(title,author)
+borrowBook(id)
+returnBook(id)
+showAvailableBooks()
+
+O/P
+
+{
+id:1,
+title:"Atomic Habits",
+author:"James Clear",
+borrowed:false
+}
+*/
+
+// Mini Library Mangement System
+
+let library = [];
+let nextId = 1
+
+function addBook(title,author){
+
+
+
+    let book = {
+        id: nextId++,
+        title,
+        author,
+        borrowed: false
+    }
+
+    library.push(book);
+}
+
+addBook("Atomic Habits","James Clear");
+console.log(library);
+
+function borrowBook(id){
+    let book = library.find(book => book.id === id);
+    
+    if(book){
+        book.borrowed = true;
+        return book;
+    }
+}
+
+console.log(borrowBook(1));
+
+
+
+function showAvailableBooks(){
+    return library.filter(book => !book.borrwed)
+}
+
+console.log(showAvailableBooks());
+
+function returnBook(id){
+    let book = library.find(book => book.id === id);
+
+    if(book){
+        book.borrowed = false;
+        return book;
+    }
+}
+
+console.log(returnBook(1));
