@@ -493,3 +493,590 @@ for(let item of sale){
 }
 
 console.log(mostSales);
+
+
+// ----------------------------------------------------------------------------------------
+
+/*
+Part 2: Objects (20 Questions)
+
+🟢 Easy Level (Q1 - Q7)
+These questions focus on creating, accessing, updating, and deleting object
+properties.
+
+Question 1 — Access User Name
+
+Task
+Print the user's name.
+Scenario
+
+A profile page needs to display the logged-in user's name.
+
+*/
+
+let User = {
+name:"Ritik",
+age:21,
+city:"Bhopal"
+};
+
+console.log(User.name);
+
+
+/*
+
+Question 2 — Update User Age
+
+
+Task
+Update age to 22.
+
+Scenario
+Today is the user's birthday.
+
+*/
+
+let userNme = {
+name:"Ritik",
+age:21
+};
+
+userNme.age = 22;
+console.log(userNme);
+
+/*
+
+Question 3 — Add Country
+
+
+Task
+Add a property:
+country:"India"
+
+Scenario
+The registration form now requires country information.
+
+*/
+
+let userN= {
+name:"Ritik",
+city:"Bhopal"
+};
+
+userN.country = "India";
+console.log(userN);
+
+/*
+Question 4 — Delete Property
+
+Phase 2 Practice Sheet 14
+
+
+Task
+Delete the password property.
+Scenario
+Sensitive information should not be sent to the frontend.
+
+*/
+
+
+let emp= {
+name:"Ritik",
+age:21,
+password:"12345"
+};
+
+console.log("Before Deletion:",emp);
+delete emp.password;
+console.log("After Deletion:",emp);
+
+
+/*
+Question 5 — Check Property Exists
+
+
+Task
+Check if the object contains a property called "price" .
+Scenario
+Before displaying the product price, you want to make sure it exists.
+
+
+*/
+// includes --> work on array and strings
+
+let Product= {
+name:"Laptop",
+price:60000
+};
+
+let productKey = Object.keys(Product);
+
+let hasPrice = productKey.includes("price");
+console.log("Exists",hasPrice);
+
+/* 2nd way */
+console.log(Product.hasOwnProperty("price")); // true
+
+
+/*
+Question 6 — Print All Keys
+
+
+Task
+Print all property names.
+Expected Output
+["brand","model","year"]
+
+
+Scenario
+Admin dashboard wants to know available fields.
+*/
+
+let car= {
+brand:"BMW",
+model:"X5",
+year:2025
+};
+
+// if use for in loop --> return single-single values
+
+/*
+for(let key of Object.entries(car)){
+    console.log(key[0]);
+} 
+   Here also get the single values 
+*/
+
+let keysArr = Object.keys(car);
+console.log(keysArr);
+
+
+/*
+Question 7 — Print All Values
+let car= {
+brand:"BMW",
+model:"X5",
+year:2025
+};
+
+Phase 2 Practice Sheet 16
+
+Task
+Print all values.
+Expected Output
+["BMW","X5",2025]
+
+*/
+
+let valueArr = Object.values(car).map(String);  // here 2025 is num but i want in string
+console.log(valueArr);
+
+
+// if i want all the data in one array then before map we can use flat()
+
+
+//--------------------------------------------------------------------------------------------
+
+/*
+
+🟡 Moderate Level (Q8 - Q14)
+These questions combine multiple object concepts.
+
+Question 8 — Print User Information Dynamically
+
+
+Task
+Print:
+name :Ritik
+age :21
+city :Bhopal
+using a loop.
+Scenario
+
+
+A profile card should automatically display all information.
+
+*/
+
+let stu= {
+name:"Ritik",
+age:21,
+city:"Bhopal"
+};
+
+for(let [key,val] of Object.entries(stu)){
+    console.log(key,":",val);
+}
+
+
+/*
+Question 9 — Employee Salary Increase
+
+Task
+Increase salary by 10%.
+Scenario
+Company announces annual appraisal.
+
+
+*/
+
+let employee= {
+name:"Aman",
+salary:50000
+};
+
+employee.salary += ((employee.salary * 10)/100);
+console.log(employee);
+
+
+/*
+
+Question 10 — Nested Object Access
+
+Phase 2 Practice Sheet 18
+
+
+Task
+Print:
+Bhopal
+
+Scenario
+Delivery app needs city information.
+
+
+*/
+
+let customer = {
+name:"Ritik",
+address: {
+city:"Bhopal",
+state:"MP"
+}
+};
+
+console.log(customer.address.city);
+
+
+
+/*
+Question 11 — Object Destructuring
+let student= {
+name:"Priya",
+age:20,
+course:"BCA"
+};
+
+Task
+Extract:
+
+name
+age
+into separate variables.
+Scenario
+You only need a few properties from a large object.
+
+
+
+*/
+
+let student= {
+name:"Priya",
+age:20,
+course:"BCA"
+};
+
+let {name,age} = student;
+console.log(name,age);
+
+
+/*
+
+Question 12 — Rename During Destructuring
+let student= {
+name:"Priya",
+age:20
+};
+
+Task
+Create:
+studentName
+studentAge
+
+Scenario
+Variable names should be more meaningful.
+
+
+*/
+
+let {name: studentName,age: studentAge} = student;
+console.log(studentName,studentAge);
+
+
+/*
+Question 13 — Merge User and Address
+
+
+
+Task
+Combine both objects.
+Scenario
+Backend sends user and address separately.
+Frontend needs one object.
+
+
+*/
+
+let cust = {
+name:"Ritik",
+age:21
+};
+
+
+let address= {
+city:"Bhopal",
+state:"MP"
+};
+
+let detailsCust = {...cust,...address};
+console.log(detailsCust); 
+
+
+/*
+Question 14 — Count Object Properties
+
+Task
+
+Phase 2 Practice Sheet 21
+
+Find how many properties exist.
+Scenario
+Dynamic form validation.
+What is this question asking?
+Count total keys.
+
+
+*/
+
+let data = {
+name:"Ritik",
+age:21,
+city:"Bhopal",
+country:"India"
+};
+
+let totalKeys = Object.keys(data);
+console.log("Total Properties : ",totalKeys.length);
+
+
+//-------------------------------------------------------------------------------
+
+/*
+
+🔴 Hard Level (Q15 - Q20)
+These require real-world logic and object manipulation.
+
+Question 15 — Highest Paid Employee
+
+
+Task
+Find the employee earning the highest salary.
+Scenario
+Company wants Employee of the Month based on salary.
+
+
+*/
+
+let
+employees= {
+aman:25000,
+ritik:50000,
+priya:45000
+};
+/* 1st way */
+
+let firstMaxSal = employees.aman;
+let maxSalEmp = "aman";
+for(let key in employees){
+    if(employees[key] > firstMaxSal){
+        firstMaxSal = employees[key];
+        maxSalEmp = key;
+    }
+} 
+
+
+console.log(firstMaxSal);
+
+
+/* 2nd way */
+let maxIncome = Math.max(...Object.values(employees));
+
+let maxIncomeEmp = Object.keys(employees).find((emp)=> employees[emp] === maxIncome);
+
+console.log(`Person whose salary is maximum is : ${maxIncomeEmp} and there salary is ${maxIncome}`);
+
+
+/*
+Question 16 — Most Used Programming Language
+
+
+Task
+Find the language with the highest votes.
+Scenario
+Survey results dashboard.
+What is this question asking?
+Find the largest value in an object.
+
+
+*/
+
+let votes= {
+JavaScript:25,
+Python:30,
+Java:15,
+Cpp:10
+};
+
+
+let lang = Object.fromEntries([
+    Object.entries(votes).reduce((acc,max)=> acc[1] > max[1] ? acc : max )    
+])
+console.log(lang);
+
+/*
+
+Question 17 — Reverse Key Value
+
+Task
+Convert into:
+{
+Delhi:"India",
+Tokyo:"Japan",
+Paris:"France"
+}
+
+Scenario
+Search by capital city instead of country.
+
+
+*/
+
+let countries= {
+India:"Delhi",
+Japan:"Tokyo",
+France:"Paris"
+};
+
+let revCity = Object.fromEntries(
+    Object.entries(countries).map(([key,val])=>[val,key])
+)
+
+console.log(revCity);
+
+
+/*
+Question 18 — Student Marks Summary
+
+
+Task
+Calculate total marks.
+Scenario
+Generate report card.
+
+*/
+
+let Marks= {
+math:90,
+science:80,
+english:85
+};
+
+let totalMarkss = Object.values(Marks).reduce((acc,curr)=> acc + curr);
+console.log(totalMarkss);
+
+
+/*  
+Question 19 — Find Missing Property
+
+
+Task
+Check whether:
+email
+exists.
+If not, add:
+
+
+
+email:"Not Provided"
+
+Scenario
+Incomplete profile detection.
+
+
+*/
+
+let profile = {
+name:"Ritik",
+age:21
+};
+
+/*
+
+for(let key in profile){
+    if(key !== "email"){
+        profile.email = "Note provided";
+    }
+}
+
+  3rd way */
+
+profile.email = profile.email || "Not provided";
+
+
+/*
+if(!profile.hasOwnProperty("email")){
+    profile.email = "Not provided";
+}
+
+*/
+
+console.log(profile);
+
+
+/*
+Question 20 — Product Inventory Analyzer
+
+Task
+Find:
+1. Total items in stock.
+2. Product with highest stock.
+3. Product with lowest stock.
+Scenario
+Inventory management dashboard.
+
+
+*/
+
+let inventory= {
+mouse:25,
+keyboard:10,
+monitor:5,
+laptop:2
+};
+
+let totalItems = Object.values(inventory).reduce((curr,next)=> curr + next);
+
+console.log("Total items in stocks", totalItems);
+
+let highestStk = Math.max(...Object.values(inventory));
+let loweststk = Math.min(...Object.values(inventory));
+let highestStock = Object.fromEntries(
+    Object.entries(inventory).map(([stock,val])=> val === highestStk?[stock,val]:null).filter(Boolean))
+
+console.log(highestStock);
+
+/* min stock */
+let minStock = Object.fromEntries([
+    Object.entries(inventory).reduce((min,current)=> current[1] < min[1]? current : min)
+]);
+
+console.log("minStock",minStock);
