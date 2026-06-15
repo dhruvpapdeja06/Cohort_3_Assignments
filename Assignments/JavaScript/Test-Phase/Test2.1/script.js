@@ -573,3 +573,432 @@ function generateBill(items){
 }
 
 console.log(generateBill(cartItems));
+
+
+/* Part 4: Arrays + Objects + Functions (20
+Questions)
+------------------------------------------------------------------------------------
+*/
+
+/*
+
+🟢 Easy Level (Q1 - Q7)
+
+Question 1 — Find Adult Users
+
+
+Create:
+getAdults(users)
+Return only users whose age is 18 or above.
+
+Scenario
+A website only allows adults to register.
+
+
+*/
+
+let users= [
+{ name:"Ritik", age:20 },
+{ name:"Aman", age:16 },
+{ name:"Priya", age:25 }
+];
+
+function getAdults(user){
+    return user.filter((e)=> e.age > 18);
+}
+
+console.log(getAdults(users));
+
+/*
+
+
+Question 2 — Product Names Extractor
+
+Create:
+getProductNames(products)
+Return:
+["Laptop","Mouse"]
+
+Scenario
+A dropdown only needs product names.
+
+*/
+
+let products= [
+{ name:"Laptop", price:50000 },
+{ name:"Mouse", price:500 }
+];
+
+function getProductNames(products){
+    return products.map((product)=>product.name);
+}
+
+console.log(getProductNames(products));
+
+/*
+Question 3 — Find User By Name
+
+Create:
+findUser(users,username)
+
+Scenario
+Search bar functionality.
+What is this question asking?
+Find a specific object based on a property value.
+
+*/
+
+let customer = [
+{ name:"Ritik" },
+{ name:"Aman" },
+{ name:"Priya" }
+];
+
+function findUser(customer,username){
+    return customer.find((user)=> user.name === username);
+}
+
+console.log(findUser(customer,"Priya"));
+
+
+/*
+
+Question 4 — Total Marks
+
+Create:
+getTotalMarks(students)
+Return:
+240
+
+
+*/
+
+let students= [
+{ name:"Ritik", marks:80 },
+{ name:"Aman", marks:90 },
+{ name:"Priya", marks:70 }
+];
+
+function getTotalMarks(students){
+    let total = 0;
+    students.forEach((user)=> total += user.marks);
+    return total;
+
+}
+
+console.log(getTotalMarks(students));
+
+/*
+
+Question 5 — Available Products
+
+Return only products whose stock is greater than zero.
+
+Scenario
+Show only available products.
+
+
+*/
+
+let product= [
+{ name:"Mouse", stock:10 },
+{ name:"Keyboard", stock:0 },
+{ name:"Monitor", stock:5 }
+];
+
+function availProducts(product){
+    return product.filter((item)=> item.stock > 0);
+}
+
+console.log(availProducts(product));
+
+
+/*
+Question 6 — Add New Student
+
+Create:
+addStudent(students,student)
+which adds a student to the array.
+
+Scenario
+Student admission system.
+What is this question asking?
+Create a reusable function that updates data.
+
+
+*/
+/* if new array want
+function addStudent(students,student){
+    return [...students,student];
+}
+
+console.log(addStudent(students,{name: "Ishan Sharma",age: 24}));
+
+*/
+
+/*  Change in the origional one 
+function addStudent(students,student){
+    students.push(student);
+    return students;
+}
+
+console.log(addStudent(students,{name: "Kamal Tomar", age: 26}));
+*/
+
+
+/*
+If your goal was to replace a student's name */
+
+function addStudent(students,oldName,newName){
+    return students.map((stu)=> stu.name === oldName ? {...stu,name:newName}:stu);
+}
+
+console.log(addStudent(students,"Aman","Mota bhai"));
+
+/*
+Question 7 — Count Premium Products
+
+Count products costing more than ₹10,000.
+Scenario
+Analytics dashboard.
+
+
+*/
+
+let items= [
+{ name:"Laptop", price:50000 },
+{ name:"Phone", price:30000 },
+{ name:"Mouse", price:500 }
+];
+
+function premiumProducts(items){
+    return (items.filter((prod) => (prod.price > 10000))).length;
+}
+
+console.log(premiumProducts(items));
+
+/* ---------------------------------------------------------------*/
+
+/*
+🟡 Moderate Level (Q8 - Q14)
+
+Question 8 — Shopping Cart Total
+
+Create:
+getCartTotal(cart)
+
+Scenario
+Checkout page.
+
+
+*/
+
+let cart= [
+{ name:"Mouse", price:500, qty:2 },
+{ name:"Keyboard", price:1000, qty:1 },
+{ name:"Monitor", price:10000, qty:1 }
+];
+
+function getCartTotal(cart){
+    return cart.reduce((acc,curr)=> acc + (curr.price * curr.qty),0);
+}
+
+console.log(getCartTotal(cart));
+
+/*
+
+Question 9 — Student Average Generator
+
+Create:
+getAverageMarks(students)
+Return average for each student.
+Scenario
+School Report Card.
+*/
+
+let emp = [
+{ name:"Ritik", marks: [80,90,85] },
+{ name:"Aman", marks: [70,75,80] }
+];
+
+function getAverageClassMarks(emp){
+    let totalMarks = 0;
+    let totalStudent = 0;
+    emp.forEach((student)=>{
+        totalMarks += student.marks.reduce((acc,curr)=> acc+ curr,0)
+         totalStudent += student.marks.length;
+});
+    return totalMarks / totalStudent;
+}
+   
+console.log(getAverageClassMarks(emp));
+
+function getAvgMarks(emp){
+    return emp.map((student)=>{
+        const total = student.marks.reduce((sum,next)=> sum + next,0);
+
+        return {
+            student : student.name,
+            avg : total / student.marks.length
+
+        }
+    })
+}
+
+console.log(getAvgMarks(emp));
+
+/*
+Question 10 — Inventory Search
+
+Create:
+findProductById(id)
+
+Scenario
+Product detail page.
+
+*/
+
+let
+inventory= [{ id:1, name:"Laptop" },
+{ id:2, name:"Mouse" },
+{ id:3, name:"Monitor" }
+];
+
+function findProductById(inventory,id){
+    return inventory.find((product)=> product.id == id);
+}
+
+console.log(findProductById(inventory,2));
+
+
+/*
+
+Question 11 — Usernames Generator
+
+Phase 2 Practice Sheet 50
+
+
+Return:
+[
+"ritik_rajput",
+"aman_gupta"
+]
+
+Scenario
+Registration system.
+
+*/
+
+let user_reg = [
+{ name:"Ritik Rajput" },
+{ name:"Aman Gupta" }
+];
+
+function usernameGenerator(user){
+    return user.map((username)=> username.name.toLowerCase().replace(" ","_"));
+
+}
+
+console.log(usernameGenerator(user_reg));
+
+
+/*
+
+Question 12 — Highest Scoring Student
+
+Find the highest scorer.
+Scenario
+
+Phase 2 Practice Sheet 51
+
+School Topper List.
+
+*/
+
+let test = [{ name:"Ritik", marks:85 },
+{ name:"Aman", marks:95 },
+{ name:"Priya", marks:75 }
+];
+
+function highestScore(emp){
+    return emp.reduce((acc,curr)=> acc.marks > curr.marks ? acc : curr);
+}
+
+console.log(highestScore(test));
+
+
+function highestScor(emp){
+    let sort = [...emp].sort((a,b)=> b.marks - a.marks);
+    console.log(sort[0]);
+}
+
+// test.sort((a, b) => a.name.localeCompare(b.name));
+highestScor(test);
+
+
+
+/*
+
+Update Product Stock
+Create:
+updateStock(id,quantity)
+that updates stock of a specific product.
+Scenario
+Warehouse management.
+What is this question asking?
+Locate the object.
+Update one property.
+
+
+*/
+
+let stock = [{
+    id:1,
+    quantitiy: 5,
+    name: "Laptop",
+    price : 33300
+},{
+    id:2,
+    quantitiy: 2,
+    name: "Cover",
+    price : 330
+},{
+    id:3,
+    quantitiy: 88,
+    name: "cover",
+    price : 100
+}]
+
+function updateStock(stock,id,quantity){
+    return stock.map((item)=> item.id === id ? {...item,quantity : quantity}: item)
+}
+
+updateStock(stock,3,10);
+console.log(stock);
+
+/*
+
+Question 14 — Sort Students by Marks
+Sort
+
+[
+{name:"A", marks:70},
+{name:"B", marks:95},
+{name:"C", marks:80}
+]
+from highest to lowest.
+
+*/
+
+let sort = [
+{name:"A", marks:70},
+{name:"B", marks:95},
+{name:"C", marks:80}
+]
+
+function highMark(sort){
+    return( [...sort].sort((a,b)=>b.marks - a.marks));
+
+}
+
+console.log(highMark(sort));
